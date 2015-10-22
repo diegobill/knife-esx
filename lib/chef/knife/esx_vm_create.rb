@@ -218,6 +218,11 @@ class Chef
         :short => "-P PASSWORD",
         :long => "--ssh-password PASSWORD",
         :description => "The ssh password"
+        
+      option :use_sudo_password,
+        :short => "-use-sudo-password PASSWORD",
+        :long => "--use-sudo-password PASSWORD",
+        :description => "Use sudo password"
 
       option :ssh_gateway,
         :short => "-G GATEWAY",
@@ -431,6 +436,7 @@ class Chef
         bootstrap.config[:environment] = config[:environment]
         bootstrap.config[:no_host_key_verify] = config[:no_host_key_verify]
         bootstrap.config[:ssh_password] = config[:ssh_password]
+        bootstrap.config[:use_sudo_password] = config[:use_sudo_password]
         bootstrap.config[:ssh_gateway] = config[:ssh_gateway]
         bootstrap
       end
